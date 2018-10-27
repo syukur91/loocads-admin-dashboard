@@ -6,19 +6,34 @@ export default {
     //   dataClass: 'text-center'
     // },
     {
-      name: 'reach',
-      title: 'Reach',
-      sortField: 'reach'
+      name: 'ad_name',
+      title: 'Ad Name',
+      sortField: 'ad_name'
     },
     {
-      name: 'amount_spent',
-      title: 'Amount Spent',
-      sortField: 'amount_spent'
-
+      name: 'campaign',
+      title: 'Campaign',
+      sortField: 'campaign'
+    },
+    {
+      name: 'budget',
+      title: 'Budget'
+    },
+    {
+      name: 'reach',
+      title: 'Reach'
     },
     {
       name: 'impressions',
       title: 'Impressions'
+    },
+    {
+      name: 'cost_per_result',
+      title: 'Cost Per Result'
+    },
+    {
+      name: 'amount_spent',
+      title: 'Amount Spent'
     }
   ],
   sortFunctions: {
