@@ -32,7 +32,7 @@ $ git clone git@github.com:syukur91/loocads-admin-dashboard.git
 $ cd loocads-admin-dashboard
 $ npm install
 
-# serve with hot reload at localhost:8080.
+# serve with hot reload at localhost:9090.
 $ npm run serve
 
 # build for production with minification
