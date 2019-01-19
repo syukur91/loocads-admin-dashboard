@@ -45,13 +45,13 @@ export default {
   },
   data () {
     return {
-      apiUrl: 'http://localhost:4443/list',
+      apiUrl: 'http://localhost:4443/paging',
       apiMode: true,
       tableFields: FieldsDef.tableFields,
       itemsPerPage: ItemsPerPageDef.itemsPerPage,
       sortFunctions: FieldsDef.sortFunctions,
       paginationPath: '',
-      defaultTablePerPage: 6,
+      defaultTablePerPage: 2,
       queryParams: QueryParams
     }
   }
