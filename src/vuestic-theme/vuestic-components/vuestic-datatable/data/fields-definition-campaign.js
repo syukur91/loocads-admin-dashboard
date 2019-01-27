@@ -6,26 +6,7 @@ export default {
       dataClass: 'text-center',
       width: '4%'
     },
-    // {
-    //   name: 'name',
-    //   sortField: 'name',
-    //   width: '24%'
-    // },
-    // {
-    //   name: 'email',
-    //   sortField: 'email',
-    //   width: '24%'
-    // },
-    // {
-    //   name: 'address.line2',
-    //   title: 'city',
-    //   width: '24%'
-    // },
-    // {
-    //   name: 'salary',
-    //   title: 'score',
-    //   width: '24%'
-    // },
+    
     {
       name: 'amountSpent',
       title: 'Amount Spent',
@@ -33,13 +14,23 @@ export default {
       width: '24%'
     },
     {
-      name: 'impressions',
-      title: 'Impressions',
+      name: 'budget',
+      title: 'Budget',
       width: '24%'
     },
     {
-      name: 'reach',
-      title: 'Reach',
+      name: 'campaignName',
+      title: 'Campaign Name',
+      width: '24%'
+    },
+    {
+      name: 'costPerResult',
+      title: 'Cost Per Result',
+      width: '24%'
+    },
+    {
+      name: 'impressions',
+      title: 'Impressions',
       width: '24%'
     },
   ],

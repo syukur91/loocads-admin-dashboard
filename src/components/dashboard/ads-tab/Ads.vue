@@ -2,15 +2,25 @@
   <div class="ads-tab dashboard-tab">
     <div class="row">
       <div class="col-md-12">
-        <vuestic-data-table
-          :apiMode="apiMode"
-          :tableData="tableData"
-          :tableFields="tableFields"
-          :itemsPerPage="itemsPerPage"
-          :onEachSide="onEachSide"
-          :sortFunctions="sortFunctions"
-          :dataModeFilterableFields="dataModeFilterableFields"
-        />
+       <vuestic-widget :headerText="$t('tables.advanced')">
+          <vuestic-data-table
+            :apiUrl="apiUrl"
+            :tableFields="tableFields"
+            :itemsPerPage="itemsPerPage"
+            :defaultPerPage="defaultTablePerPage"
+            :sortFunctions="sortFunctions"
+            :apiMode="apiMode"
+            :paginationPath="paginationPath"
+            :queryParams="queryParams"
+          >
+            <spring-spinner
+              slot="loading"
+              :animation-duration="2500"
+              :size="70"
+              color="#4ae387"
+            />
+          </vuestic-data-table>
+        </vuestic-widget>
       </div>
     </div>
   </div>
@@ -18,9 +28,11 @@
 
 <script>
 import Vue from 'vue'
-import BadgeColumn from 'components/tables/BadgeColumn.vue'
-import TableData from './TableData'
-import FieldsDef from './fields-definition'
+import BadgeColumn from './BadgeColumn.vue'
+import FieldsDefAds from 'vuestic-components/vuestic-datatable/data/fields-definition-ads'
+import ItemsPerPageDef from 'vuestic-components/vuestic-datatable/data/items-per-page-definition'
+import QueryParams from 'vuestic-components/vuestic-datatable/data/query-params'
+import { SpringSpinner } from 'epic-spinners'
 
 Vue.component('badge-column', BadgeColumn)
 
@@ -29,20 +41,14 @@ export default {
 
   data () {
     return {
-      apiMode: false,
-      sortFunctions: FieldsDef.sortFunctions,
-      tableData: TableData,
-      onEachSide: 1,
-      tableFields: FieldsDef.tableFields,
-      dataModeFilterableFields: ['reach','amount_spent'],
-      itemsPerPage: [
-        {
-          value: 10
-        },
-        {
-          value: 10
-        }
-      ],
+      apiUrl: 'http://localhost:4443/ads',
+      apiMode: true,
+      tableFields: FieldsDefAds.tableFields,
+      itemsPerPage: ItemsPerPageDef.itemsPerPage,
+      sortFunctions: FieldsDefAds.sortFunctions,
+      paginationPath: '',
+      defaultTablePerPage: 3,
+      queryParams: QueryParams
     }
   }
 }
