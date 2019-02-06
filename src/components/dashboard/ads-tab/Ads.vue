@@ -41,7 +41,7 @@ export default {
 
   data () {
     return {
-      apiUrl: 'http://localhost:4443/ads',
+      apiUrl: 'http://45.76.178.16:4443/ads',
       apiMode: true,
       tableFields: FieldsDefAds.tableFields,
       itemsPerPage: ItemsPerPageDef.itemsPerPage,

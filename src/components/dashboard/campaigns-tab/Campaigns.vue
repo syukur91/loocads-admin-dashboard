@@ -42,7 +42,7 @@ export default {
 
   data () {
     return {
-     apiUrl: 'http://localhost:4443/campaigns',
+     apiUrl: 'http://45.76.178.16:4443/campaigns',
       apiMode: true,
       tableFields: FieldsDefCampaign.tableFields,
       itemsPerPage: ItemsPerPageDef.itemsPerPage,

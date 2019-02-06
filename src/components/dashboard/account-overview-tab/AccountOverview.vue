@@ -45,7 +45,7 @@ export default {
   },
   data () {
     return {
-      apiUrl: 'http://localhost:4443/accountOverview',
+      apiUrl: 'http://45.76.178.16:4443/accountOverview',
       apiMode: true,
       tableFields: FieldsDef.tableFields,
       itemsPerPage: ItemsPerPageDef.itemsPerPage,
