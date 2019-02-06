@@ -34,7 +34,6 @@ import ItemsPerPageDef from 'vuestic-components/vuestic-datatable/data/items-per
 import QueryParams from 'vuestic-components/vuestic-datatable/data/query-params'
 import { SpringSpinner } from 'epic-spinners'
 
-
 Vue.component('badge-column', BadgeColumn)
 
 export default {
@@ -42,7 +41,7 @@ export default {
 
   data () {
     return {
-     apiUrl: 'http://45.76.178.16:4443/campaigns',
+      apiUrl: 'http://45.76.178.16:4443/campaigns',
       apiMode: true,
       tableFields: FieldsDefCampaign.tableFields,
       itemsPerPage: ItemsPerPageDef.itemsPerPage,

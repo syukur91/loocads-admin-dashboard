@@ -18,7 +18,7 @@ export default {
   props: {
     hidden: {
       type: Boolean,
-      required: true,
+      required: false,
     }
   }
 }

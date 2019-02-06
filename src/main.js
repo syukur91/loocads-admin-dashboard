@@ -12,6 +12,15 @@ import router from './router'
 import VuesticPlugin from '@/vuestic-theme/vuestic-plugin'
 import './i18n'
 import YmapPlugin from 'vue-yandex-maps'
+import VueResource from 'vue-resource'
+
+Vue.use(VueResource)
+
+Vue.http.headers.common['Content-Type'] = 'application/json'
+Vue.http.headers.common['Access-Control-Allow-Origin'] = 'http://45.76.178.16:4443'
+Vue.http.headers.common['Accept'] = 'application/json, text/plain, */*'
+Vue.http.headers.common['Access-Control-Allow-Headers'] = 'Origin, Accept, Content-Type, Authorization, Access-Control-Allow-Origin'
+Vue.http.headers.common['Access-Control-Request-Method'] = '*'
 
 Vue.use(VuesticPlugin)
 Vue.use(YmapPlugin)
