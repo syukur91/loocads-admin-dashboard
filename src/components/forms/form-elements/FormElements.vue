@@ -10,12 +10,84 @@
                 <fieldset>
                   <div class="form-group">
                     <div class="input-group">
-                      <input id="simple-input" required/>
-                      <label class="control-label" for="simple-input">{{'forms.inputs.textInput'
-                        | translate}}</label><i class="bar"></i>
+                      <input
+                      id="campaignName"
+                      name="campaignName"
+                      v-model="campaignName"
+                      required/>
+                      <!-- <label class="control-label" for="simple-input">{{'forms.inputs.textInput'
+                        | translate}}</label><i class="bar"></i> -->
+
+                        <label class="control-label" for="simple-input">Campaign Name</label><i class="bar"></i>
+                    </div>
+
+                  </div>
+
+                  <div class="form-group">
+
+                    <div class="input-group">
+                      <input
+                       id="campaignType"
+                       name="campaignType"
+                       v-model="campaignType"
+
+                       required/>
+                      <!-- <label class="control-label" for="simple-input">{{'forms.inputs.textInput'
+                        | translate}}</label><i class="bar"></i> -->
+
+                        <label class="control-label" for="simple-input">Campaign Type</label><i class="bar"></i>
                     </div>
                   </div>
-                  <div class="form-group with-icon-right"
+
+                  <div class="form-group">
+
+                    <div class="input-group">
+                      <input
+                       id="quantity"
+                       name="quantity"
+                       v-model="quantity"
+
+                       required/>
+                      <!-- <label class="control-label" for="simple-input">{{'forms.inputs.textInput'
+                        | translate}}</label><i class="bar"></i> -->
+
+                        <label class="control-label" for="simple-input">Quantity</label><i class="bar"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+
+                    <div class="input-group">
+                      <input
+                       id="radius"
+                       name="radius"
+                       v-model="radius"
+
+                       required/>
+                      <!-- <label class="control-label" for="simple-input">{{'forms.inputs.textInput'
+                        | translate}}</label><i class="bar"></i> -->
+
+                        <label class="control-label" for="simple-input">Radius</label><i class="bar"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+
+                    <div class="input-group">
+
+                      <vuestic-file-upload
+                            type="gallery"
+                            :file-types="'.png, .jpg, .jpeg, .gif'"
+                            v-model="gallery"
+                        />
+                    </div>
+                  </div>
+
+                  <button class="btn btn-primary" type="submit">
+                    Submit
+                  </button>
+
+                  <!-- <div class="form-group with-icon-right"
                        :class="{'has-error': errors.has('successfulEmail'), 'valid': isSuccessfulEmailValid}">
                     <div class="input-group">
                       <input
@@ -36,8 +108,9 @@
                         {{ errors.first('successfulEmail') }}
                       </small>
                     </div>
-                  </div>
-                  <div class="form-group with-icon-right"
+                  </div> -->
+
+                  <!-- <div class="form-group with-icon-right"
                        :class="{'has-error': errors.has('wrongEmail')}">
                     <div class="input-group">
                       <input
@@ -57,7 +130,9 @@
                         }}
                       </small>
                     </div>
-                  </div>
+                  </div> -->
+
+                  <!--
                   <div class="form-group">
                     <div class="input-group">
                       <textarea type="text" id="simple-textarea"
@@ -65,11 +140,11 @@
                       <label class="control-label" for="simple-textarea">{{'forms.inputs.textArea'
                         | translate}}</label><i class="bar"></i>
                     </div>
-                  </div>
+                  </div> -->
                 </fieldset>
               </div>
 
-              <div class="col-md-4">
+              <!-- <div class="col-md-4">
                 <fieldset>
                   <div class="form-group with-icon-left">
                     <div class="input-group">
@@ -107,9 +182,9 @@
                     </div>
                   </div>
                 </fieldset>
-              </div>
+              </div> -->
 
-              <div class="col-md-4">
+              <!-- <div class="col-md-4">
                 <fieldset>
                   <div class="form-group form-group-w-btn">
                     <div class="input-group">
@@ -136,7 +211,8 @@
                     </div>
                   </div>
                 </fieldset>
-              </div>
+              </div> -->
+
             </div>
 
           </form>
@@ -144,7 +220,7 @@
       </div>
     </div>
 
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-12">
         <vuestic-widget :headerText="$t('forms.dateTimePicker.title')">
           <form>
@@ -254,9 +330,9 @@
           </form>
         </vuestic-widget>
       </div>
-    </div>
+    </div> -->
 
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-12">
         <vuestic-widget :headerText="'forms.selects.title' | translate">
           <form>
@@ -295,9 +371,9 @@
           </form>
         </vuestic-widget>
       </div>
-    </div>
+    </div> -->
 
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-12">
         <vuestic-widget :headerText="'forms.controls.title' | translate">
           <form>
@@ -398,7 +474,8 @@
           </form>
         </vuestic-widget>
       </div>
-    </div>
+    </div> -->
+
   </div>
 </template>
 

@@ -38,7 +38,9 @@ Vue.component('badge-column', BadgeColumn)
 
 export default {
   name: 'ads-tab',
-
+  components: {
+    SpringSpinner
+  },
   data () {
     return {
       apiUrl: 'http://45.76.178.16:4443/ads',
