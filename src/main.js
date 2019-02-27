@@ -12,15 +12,18 @@ import router from './router'
 import VuesticPlugin from '@/vuestic-theme/vuestic-plugin'
 import './i18n'
 import YmapPlugin from 'vue-yandex-maps'
-// import VueResource from 'vue-resource'
 
-// Vue.use(VueResource)
+import * as VueGoogleMaps from 'vue2-google-maps'
 
-// Vue.http.headers.common['Content-Type'] = 'application/json'
-// Vue.http.headers.common['Access-Control-Allow-Origin'] = 'http://45.76.178.16:4443'
-// Vue.http.headers.common['Accept'] = 'application/json, text/plain, */*'
-// Vue.http.headers.common['Access-Control-Allow-Headers'] = 'Origin, Accept, Content-Type, Authorization, Access-Control-Allow-Origin'
-// Vue.http.headers.common['Access-Control-Request-Method'] = '*'
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyDz3i6w1h0YI9y4KxnYxmT_sqLSqs0GAB8',
+    libraries: 'places' // This is required if you use the Autocomplete plugin
+    // OR: libraries: 'places,drawing'
+    // OR: libraries: 'places,drawing,visualization'
+    // (as you require)
+  }
+})
 
 Vue.use(VuesticPlugin)
 Vue.use(YmapPlugin)

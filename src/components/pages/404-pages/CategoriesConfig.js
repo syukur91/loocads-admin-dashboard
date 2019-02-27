@@ -3,7 +3,7 @@ export default [
     categoryName: 'Forms',
     items: [
       {
-        itemName: 'Form Elements',
+        itemName: 'Campaign',
         itemLink: '/admin/forms/form-elements'
       },
       {

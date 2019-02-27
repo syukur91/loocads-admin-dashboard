@@ -83,6 +83,30 @@
                     </div>
                   </div>
 
+                  <div class="form-group">
+
+                     <gmap-map
+                      :center="{lat:10, lng:10}"
+                      :zoom="7"
+                      @rightclick="mapRclicked"
+                      map-type-id="terrain"
+                      style="width: 500px; height: 300px">
+                      <gmap-marker
+                      :key="index"
+                      v-if="m.enabled"
+                      :position.sync="m.position"
+                      :opacity="m.opacity"
+                      :draggable.sync="m.draggable"
+                      @click="m.clicked++"
+                      @rightclick="m.rightClicked++"
+                      @dragend="m.dragended++"
+                      v-for="(m, index) in markers"
+                      >
+                      </gmap-marker>
+                    </gmap-map>
+
+                  </div>
+
                   <button class="btn btn-primary" type="submit">
                     Submit
                   </button>
@@ -484,6 +508,19 @@ import CountriesList from 'data/CountriesList'
 
 export default {
   name: 'form-elements',
+  filters: {
+    markerRemover (markers) {
+      if (this.markersEven) {
+        const result = []
+        for (var i = 0; i < markers.length; i += 2) {
+          result.push(markers[i])
+        }
+        return result
+      } else {
+        return markers
+      }
+    }
+  },
   computed: {
     datePickerDisabled: () => [date => !(date.getDate() % 5)],
     isSuccessfulEmailValid () {
@@ -496,6 +533,9 @@ export default {
   },
   data () {
     return {
+      markers: [],
+      latitude: '',
+      longitude: '',
       isMale: true,
       countriesList: CountriesList,
       chosenCountry: '',
@@ -542,6 +582,32 @@ export default {
     clear (field) {
       this[field] = ''
     },
+    mapRclicked (mouseArgs) {
+      const createdMarker = this.addMarker()
+      createdMarker.position.lat = mouseArgs.latLng.lat()
+      createdMarker.position.lng = mouseArgs.latLng.lng()
+      this.latitude = createdMarker.position.lat
+      this.longitude = createdMarker.position.lng
+      console.log(createdMarker.position.lat)
+      console.log(this.markers)
+    },
+    addMarker: function addMarker () {
+      this.markers.splice(-1, 1)
+      this.markers.push({
+        // position: { lat: 48.8538302, lng: 2.2982161 },
+        position: { lat: 106.8278466, lng: -6.2153027 },
+
+        opacity: 1,
+        draggable: true,
+        enabled: true,
+        clicked: 0,
+        rightClicked: 0,
+        dragended: 0,
+        ifw: true,
+        ifw2text: 'This text is bad please change me :( '
+      })
+      return this.markers[this.markers.length - 1]
+    }
   },
   created () {
     this.$nextTick(() => {

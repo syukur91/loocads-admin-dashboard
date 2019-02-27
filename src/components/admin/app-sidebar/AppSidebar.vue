@@ -14,7 +14,8 @@
           <span slot="title">
              <span
             class="sidebar-menu-item-icon vuestic-icon vuestic-icon-forms"></span>
-            <span>{{ $t('menu.formElements') }}</span>
+            <!-- <span>{{ $t('menu.formElements') }}</span> -->
+            <span>Campaign</span>
           </span>
       </sidebar-link>
 
