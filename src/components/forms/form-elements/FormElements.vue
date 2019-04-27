@@ -117,11 +117,8 @@
                     Submit
                   </button>
 
-              
                 </fieldset>
               </div>
-
-              
 
             </div>
 
@@ -138,7 +135,6 @@ import CountriesList from 'data/CountriesList'
 import axios from 'axios'
 import FormData from 'form-data'
 import ToastPositionPicker from '../../ui/notifications/ToastPositionPicker.vue'
-
 
 export default {
   name: 'form-elements',
@@ -223,54 +219,44 @@ export default {
     }
   },
   methods: {
-    
+
     onCreateAd () {
-      let data = new FormData();
-      data.append('gallery', this.gallery[0]);
-      data.append('campaignName', this.campaignName);
-      data.append('campaignType', this.campaignName);
-      data.append('quantity', parseInt(this.quantity));
-      data.append('radius', parseInt(this.radius));
-      data.append('latitude', this.latitude);
-      data.append('longitude', this.longitude);
-      data.append('imageUrl', '');
-        
+      let data = new FormData()
+      data.append('gallery', this.gallery[0])
+      data.append('campaignName', this.campaignName)
+      data.append('campaignType', this.campaignName)
+      data.append('quantity', parseInt(this.quantity))
+      data.append('radius', parseInt(this.radius))
+      data.append('latitude', this.latitude)
+      data.append('longitude', this.longitude)
+      data.append('imageUrl', '')
 
-        axios.post('http://45.76.178.16:4443/ad', 
+      axios.post('http://45.76.178.16:4443/ad',
         data,
-        {headers: {
+        { headers: {
           'Content-type': 'multipart/form-data'
-          }}
-        )
+        } }
+      )
         .then(r => {
+          // console.log('r: ', JSON.stringify(r, null, 2))
 
-            // console.log('r: ', JSON.stringify(r, null, 2))
-
-            if (r.status == 200){
-
-               this.showToast("Success", {
-                  icon: this.toastIcon,
-                  position: this.toastPosition,
-                  duration: this.toastDuration,
-                  fullWidth: this.isToastFullWidth
-                })
-
-            }else{
-
-                 this.showToast("Failed", {
-                  icon: this.toastIcon,
-                  position: this.toastPosition,
-                  duration: this.toastDuration,
-                  fullWidth: this.isToastFullWidth
-                })
-            }
-
-            
-
+          if (r.status == 200) {
+            this.showToast('Success', {
+              icon: this.toastIcon,
+              position: this.toastPosition,
+              duration: this.toastDuration,
+              fullWidth: this.isToastFullWidth
+            })
+          } else {
+            this.showToast('Failed', {
+              icon: this.toastIcon,
+              position: this.toastPosition,
+              duration: this.toastDuration,
+              fullWidth: this.isToastFullWidth
+            })
           }
-        );
-
-        
+        }
+        )
     },
     clear (field) {
       this[field] = ''

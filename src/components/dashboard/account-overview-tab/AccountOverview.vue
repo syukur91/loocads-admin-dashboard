@@ -44,7 +44,7 @@ export default {
   },
   data () {
     return {
-      apiUrl: 'http://45.76.178.16:4443/accountOverview',
+      apiUrl: 'https://client.loocads.com/accountOverview',
       apiMode: true,
       tableFields: FieldsDef.tableFields,
       itemsPerPage: ItemsPerPageDef.itemsPerPage,

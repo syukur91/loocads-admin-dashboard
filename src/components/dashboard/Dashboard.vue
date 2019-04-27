@@ -1,8 +1,6 @@
 <template>
   <div class="dashboard">
 
-    
-
     <vuestic-widget class="no-padding no-v-padding">
       <vuestic-tabs
         :names="[$t('dashboard.accountOverview'), $t('dashboard.campaigns'), $t('dashboard.ads'), $t('dashboard.adList')]"
@@ -21,7 +19,6 @@
         </div>
       </vuestic-tabs>
     </vuestic-widget>
-    
 
   </div>
 </template>
@@ -37,7 +34,6 @@ import AccountOverviewTab from './account-overview-tab/AccountOverview.vue'
 import CampaignsTab from './campaigns-tab/Campaigns.vue'
 import AdsTab from './ads-tab/Ads.vue'
 import ListTab from './list-tab/List.vue'
-
 
 export default {
   name: 'dashboard',

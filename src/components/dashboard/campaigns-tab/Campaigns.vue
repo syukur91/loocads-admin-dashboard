@@ -43,7 +43,7 @@ export default {
   },
   data () {
     return {
-      apiUrl: 'http://45.76.178.16:4443/campaigns',
+      apiUrl: 'https://client.loocads.com/campaigns',
       apiMode: true,
       tableFields: FieldsDefCampaign.tableFields,
       itemsPerPage: ItemsPerPageDef.itemsPerPage,

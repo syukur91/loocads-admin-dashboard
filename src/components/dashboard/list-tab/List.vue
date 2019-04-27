@@ -43,7 +43,7 @@ export default {
   },
   data () {
     return {
-      apiUrl: 'http://45.76.178.16:4443/adlist',
+      apiUrl: 'https://client.loocads.com/adlist',
       apiMode: true,
       tableFields: FieldsDefList.tableFields,
       itemsPerPage: ItemsPerPageDef.itemsPerPage,
