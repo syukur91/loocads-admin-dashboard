@@ -224,7 +224,7 @@ export default {
       let data = new FormData()
       data.append('gallery', this.gallery[0])
       data.append('campaignName', this.campaignName)
-      data.append('campaignType', this.campaignName)
+      data.append('campaignType', this.campaignType)
       data.append('quantity', parseInt(this.quantity))
       data.append('radius', parseInt(this.radius))
       data.append('latitude', this.latitude)
