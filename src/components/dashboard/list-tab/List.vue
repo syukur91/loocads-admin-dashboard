@@ -19,6 +19,7 @@
               :size="70"
               color="#4ae387"
             />
+
           </vuestic-data-table>
         </vuestic-widget>
       </div>
@@ -29,12 +30,16 @@
 <script>
 import Vue from 'vue'
 import BadgeColumn from './BadgeColumn.vue'
+import CustomActions from './CustomActions.vue'
 import FieldsDefList from 'vuestic-components/vuestic-datatable/data/fields-definition-list'
 import ItemsPerPageDef from 'vuestic-components/vuestic-datatable/data/items-per-page-definition'
 import QueryParams from 'vuestic-components/vuestic-datatable/data/query-params'
 import { SpringSpinner } from 'epic-spinners'
 
 Vue.component('badge-column', BadgeColumn)
+
+Vue.component('custom-actions', CustomActions)
+
 
 export default {
   name: 'list-tab',
@@ -49,7 +54,7 @@ export default {
       itemsPerPage: ItemsPerPageDef.itemsPerPage,
       sortFunctions: FieldsDefList.sortFunctions,
       paginationPath: '',
-      defaultTablePerPage: 3,
+      defaultTablePerPage: 10,
       queryParams: QueryParams
     }
   }

@@ -1,12 +1,17 @@
 export default {
   tableFields: [
-    {
-      name: '__component:badge-column',
-      title: '',
-      dataClass: 'text-center',
-      width: '4%'
-    },
     
+
+    // {
+    //   name: '__sequence',
+    //   title: 'tes',
+    //   dataClass: 'text-center',
+    // },
+    {
+      name: 'id',
+      title: 'ID',
+      visible: false
+    },
     {
       name: 'campaignName',
       title: 'Campaign Name',
@@ -37,6 +42,13 @@ export default {
       name: 'radius',
       title: 'Radius',
       width: '24%'
+    },
+    {
+      name: '__component:custom-actions',
+      title: 'Action',
+      titleClass: 'text-center',
+      dataClass: 'text-center',
+      width: '4%'
     },
     
   ],

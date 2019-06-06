@@ -50,6 +50,7 @@
                        id="quantity"
                        name="quantity"
                        v-model="quantity"
+                        
 
                        required
 
@@ -171,6 +172,7 @@ export default {
       markers: [],
       latitude: '',
       longitude: '',
+      radius: null,
       isMale: true,
       countriesList: CountriesList,
       chosenCountry: '',
@@ -231,7 +233,8 @@ export default {
       data.append('longitude', this.longitude)
       data.append('imageUrl', '')
 
-      axios.post('https://client.loocads.com/ad',
+      // axios.post('https://client.loocads.com/ad',
+      axios.post('http://localhost:4443/ad',
         data,
         { headers: {
           'Content-type': 'multipart/form-data'
