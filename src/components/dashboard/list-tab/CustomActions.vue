@@ -73,7 +73,7 @@
         longitude: null,
         radius: null,
         quantity: null,
-        defaultImage: "https://picsum.photos/300/200/?image=997",
+        defaultImage: null,
         toastText: 'Success',
         toastDuration: 2500,
         toastIcon: 'fa-star-o',
@@ -104,17 +104,24 @@
       },
       itemAction (action, data, index) {
 
+        
+
+       
+
+
         const getAd = () => {
           try {
-            return axios.get('http://localhost:4443/ad/'+data.id)
+            
+            return axios.get('https://client.loocads.com/ad/'+data.id)
           } catch (error) {
             console.error(error)
           }
         }
 
         const getOneAd = async () => {
-        const ad = getAd()
+        const ad = await getAd()
           .then(response => {
+            
             if (response.data) {
                 this.campaignName =  "Name: "+response.data.campaignName;
                 this.campaignType=  "Type: "+response.data.campaignType;

@@ -233,8 +233,8 @@ export default {
       data.append('longitude', this.longitude)
       data.append('imageUrl', '')
 
-      // axios.post('https://client.loocads.com/ad',
-      axios.post('http://localhost:4443/ad',
+      axios.post('https://client.loocads.com/ad',
+      // axios.post('http://localhost:4443/ad',
         data,
         { headers: {
           'Content-type': 'multipart/form-data'
