@@ -50,7 +50,6 @@
                        id="quantity"
                        name="quantity"
                        v-model="quantity"
-                        
 
                        required
 
